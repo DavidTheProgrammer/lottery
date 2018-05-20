@@ -1,27 +1,11 @@
-# Lottery
+## NOT A PREDICITON ENGINE
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+This Angular PWA is not a prediction engine. So don't blame me if you don't win. And don't sue me either.
 
-## Development server
+The only reason I created this app is because when I play the lottery, I never truly pick random numbers, there's always some bias.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+So I'm putting my faith in a random number generator to help me pick lottery numbers. If I win hooray, if not, whatever.
 
-## Code scaffolding
+**Use at your own risk, only with acceptance and understanding of the information above. And also With full knowledge that the numbers produced to not guarantee a winning ticket.**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**Don't Sue me... I can't stress that enough.**
