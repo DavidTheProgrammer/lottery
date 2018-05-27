@@ -30,7 +30,7 @@ import { BoardComponent } from './boards/board/board.component';
   ],
   imports: [
     BrowserModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {
+    ServiceWorkerModule.register('./ngsw-worker.js', {
       enabled: environment.production
     }),
     BrowserAnimationsModule,
