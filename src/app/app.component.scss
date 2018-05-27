@@ -6,8 +6,7 @@
   flex-direction: column-reverse;
 }
 
-.boards,
-.options {
+.boards {
   padding: 2%;
 
   &__header {
@@ -22,45 +21,4 @@
     padding: 2%;
     text-align: center;
   }
-}
-
-.boards {
-}
-
-.options {
-  margin-bottom: 8%;
-  // Icon
-  &__icon {
-    margin-left: 2%;
-  }
-
-  // Container
-  &__container {
-    padding: 4%;
-  }
-}
-
-.option {
-  font-size: 1em;
-  margin: 2% 0;
-
-  &--inline {
-    display: flex;
-    align-items: center;
-    margin-top: -6%;
-  }
-
-  &__label {
-    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-  }
-}
-
-.numOfBoards {
-  width: 16%;
-  margin-left: 4%;
-}
-
-.generate {
-  text-align: center;
-  margin: 4% 0 8%;
 }

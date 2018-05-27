@@ -1,0 +1,66 @@
+@import '../../_variables.scss';
+
+.options {
+  padding: 2%;
+  margin-bottom: 8%;
+  &__header {
+    font-family: 'Montserrat', sans-serif;
+    // font-weight: 300 !important;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 2%;
+    text-align: center;
+  }
+
+  &__icon {
+    margin-left: 2%;
+  }
+
+  &__container {
+    padding: 4%;
+  }
+}
+
+.option {
+  font-size: 1em;
+  margin: 2% 0;
+
+  &--inline {
+    display: flex;
+    align-items: center;
+    margin-top: -6%;
+  }
+
+  &__label {
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  }
+}
+
+.numOfBoards {
+  width: 16%;
+  margin-left: 4%;
+}
+
+.generate {
+  text-align: center;
+  margin: 4% 0 8%;
+}
+
+.slider {
+  display: flex;
+
+  &__value {
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    margin-left: 8px;
+    display: flex;
+    font-weight: 600;
+    font-size: 0.9em;
+    align-items: center;
+    color: $accent;
+    border-radius: 50%;
+  }
+}

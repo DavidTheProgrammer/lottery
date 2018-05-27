@@ -1,0 +1,21 @@
+@import '../../_variables.scss';
+
+.boards {
+  padding: 24px 0;
+  min-height: 50vh;
+}
+
+.template {
+  &__no-options {
+    height: 50vh;
+    border-radius: 10%;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $disabled;
+    border: 2px dashed $accent;
+  }
+}

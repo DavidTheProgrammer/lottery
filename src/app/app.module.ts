@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -17,15 +17,20 @@ import {
   MatSnackBarModule
 } from '@angular/material';
 
+import { BoardsComponent } from './boards/boards.component';
+import { BoardOptionsComponent } from './board-options/board-options.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BoardsComponent,
+    BoardOptionsComponent
+],
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {
       enabled: environment.production
     }),
     BrowserAnimationsModule,
-    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatSliderModule,
