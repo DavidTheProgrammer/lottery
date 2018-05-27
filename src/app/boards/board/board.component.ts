@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
+  @Input() boardName: string;
+  @Input() numbersToHighlight: Array<number>;
+  @Input() pool: Array<number>;
 
-  constructor() { }
-
-  ngOnInit() {
+  isNumberSelected(num: number): boolean {
+    return this.numbersToHighlight.includes(num);
   }
-
 }

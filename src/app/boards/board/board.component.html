@@ -1,3 +1,11 @@
-<p>
-  board works!
-</p>
+<div class="board mat-elevation-z2">
+  <h4 class="board__title" *ngIf="boardName">
+    {{ boardName }}
+  </h4>
+
+  <div class="board__numbers">
+    <div class="number" *ngFor="let number of pool;" [class.selected]="isNumberSelected(number)">
+      <span>{{ number }}</span>
+    </div>
+  </div>
+</div>

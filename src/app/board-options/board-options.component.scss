@@ -4,8 +4,7 @@
   padding: 2%;
   margin-bottom: 8%;
   &__header {
-    font-family: 'Montserrat', sans-serif;
-    // font-weight: 300 !important;
+    font-family: $font-primary;
     font-size: 1.2em;
     display: flex;
     justify-content: center;
@@ -23,20 +22,38 @@
   &__container {
     padding: 4%;
   }
+
+  @media (min-width: 780px) and (max-width: 948px) {
+    max-width: 371px;
+  }
+
+  @media (min-width: 948px) {
+    max-width: 481px;
+  }
 }
 
 .option {
   font-size: 1em;
-  margin: 2% 0;
-
-  &--inline {
-    display: flex;
-    align-items: center;
-    margin-top: -6%;
-  }
+  padding: 1% 0;
+  display: flex;
+  flex-wrap: wrap;
 
   &__label {
-    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    font-family: $font-secondary;
+    display: flex;
+    align-items: center;
+  }
+
+  &--slider {
+    flex-direction: column;
+
+    @media (min-width: 455px) {
+      flex-direction: row;
+    }
+  }
+
+  &--select {
+    margin-top: -12px;
   }
 }
 
@@ -54,7 +71,7 @@
   display: flex;
 
   &__value {
-    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    font-family: $font-secondary;
     margin-left: 8px;
     display: flex;
     font-weight: 600;

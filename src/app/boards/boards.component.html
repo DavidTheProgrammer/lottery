@@ -1,6 +1,7 @@
 <div class="boards">
   <ng-container *ngIf="boardOptions; else noOptions">
-
+    <app-board class="board" *ngFor="let board of boardsToGenerate" [boardName]="board.boardName" [pool]="pool" [numbersToHighlight]="board.numbersToHighlight">
+    </app-board>
   </ng-container>
 </div>
 

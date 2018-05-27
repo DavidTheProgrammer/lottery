@@ -19,11 +19,15 @@ import {
 
 import { BoardsComponent } from './boards/boards.component';
 import { BoardOptionsComponent } from './board-options/board-options.component';
+import { BoardComponent } from './boards/board/board.component';
 
 @NgModule({
-  declarations: [AppComponent, BoardsComponent,
+  declarations: [
+    AppComponent,
+    BoardComponent,
+    BoardsComponent,
     BoardOptionsComponent
-],
+  ],
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {

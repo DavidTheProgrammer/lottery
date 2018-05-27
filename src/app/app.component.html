@@ -5,6 +5,11 @@
 </header>
 
 <main class="main">
+
+  <div class="options">
+    <app-board-options (generateBoards)="onGenerateBoards($event)"></app-board-options>
+  </div>
+
   <div class="boards">
     <header class="boards__header">
       <h2 class="boards__heading">May the odds be in your favour 🤞</h2>
@@ -13,10 +18,6 @@
     <div class="boards__wrapper">
       <app-boards [boardOptions]="boardOptions"></app-boards>
     </div>
-  </div>
-
-  <div class="options">
-    <app-board-options (generateBoards)="onGenerateBoards($event)"></app-board-options>
   </div>
 
 </main>
