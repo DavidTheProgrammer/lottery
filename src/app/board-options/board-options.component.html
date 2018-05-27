@@ -1,0 +1,49 @@
+<form [formGroup]="optionsForm" class="options">
+  <header class="options__header">
+    <h2 class="options__heading">Board Options</h2>
+    <mat-icon class="options__icon" color="accent">
+      settings
+    </mat-icon>
+  </header>
+
+  <div class="options__container">
+    <div class="option option--slider">
+      <p class="option__label">Size of pool (e.g 32 balls)</p>
+      <div class="slider">
+        <mat-slider thumbLabel min="30" max="50" step="2" formControlName="sizeOfPool"></mat-slider>
+        <div class="slider__value">{{optionsForm.value['sizeOfPool']}}</div>
+      </div>
+    </div>
+    <div class="option option--slider">
+      <p class="option__label">Selections per board (e.g 6/32 balls)</p>
+      <div class="slider">
+        <mat-slider thumbLabel min="4" max="10" step="1" formControlName="selectionsPerBoard"></mat-slider>
+        <div class="slider__value">
+          {{optionsForm.value['selectionsPerBoard']}}
+        </div>
+      </div>
+    </div>
+    <div class="option option--select">
+      <p class="option__label">Number of boards to generate:</p>
+      <mat-form-field class="numOfBoards">
+        <mat-select formControlName="numberOfBoards">
+          <mat-option *ngFor="let num of numberOfBoardsOption" [value]="num">
+            {{ num }}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+    </div>
+    <div class="option">
+      <mat-checkbox labelPosition="before" formControlName="uniqueNumbersOnly">
+        Unique numbers only
+      </mat-checkbox>
+    </div>
+  </div>
+
+  <div class="generate">
+    <button mat-raised-button color="primary" [disabled]="generateButtonIsDisabled" (click)="generateOptions()">
+      $ GIVE ME THE JACKPOT $
+    </button>
+  </div>
+</form>

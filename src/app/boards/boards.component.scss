@@ -1,0 +1,30 @@
+@import '../../_variables.scss';
+
+.boards {
+  padding: 24px 0;
+  min-height: 50vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+}
+
+.board {
+  width: 100%;
+}
+
+.template {
+  &__no-options {
+    height: 50vh;
+    width: 100%;
+    border-radius: 8px;
+    font-family: $font-secondary;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $disabled;
+    border: 2px dashed $accent;
+  }
+}
