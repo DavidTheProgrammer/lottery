@@ -50,6 +50,9 @@ export class BoardsComponent implements OnChanges {
         boardName: boardName,
         numbersToHighlight: numbersToHighlight
       });
+
+      // Exit
+      return;
     }
 
     if (uniqueNumbersOnly) {
