@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy":
-      "ng build --prod --aot --base-href /lottery/ && cp ./dist/lottery/index.html ./dist/lottery/404.html && ngh --message=\"Deploying to gihub page\" --repo=https://GH_TOKEN@github.com/davidtheprogrammer/lottery.git --dir=./dist/lottery/"
+    "deploy": "ng build --prod --aot --base-href /lottery/ && cp ./dist/lottery/index.html ./dist/lottery/404.html && ngh --message=\"Deploying to gihub page\" --repo=https://GH_TOKEN@github.com/davidtheprogrammer/lottery.git --dir=./dist/lottery/"
   },
   "private": true,
   "dependencies": {
