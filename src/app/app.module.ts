@@ -17,6 +17,8 @@ import {
   MatSnackBarModule
 } from '@angular/material';
 
+import { ScrollToModule } from 'ng2-scroll-to-el';
+
 import { BoardsComponent } from './boards/boards.component';
 import { BoardOptionsComponent } from './board-options/board-options.component';
 import { BoardComponent } from './boards/board/board.component';
@@ -33,6 +35,7 @@ import { BoardComponent } from './boards/board/board.component';
     ServiceWorkerModule.register('./ngsw-worker.js', {
       enabled: environment.production
     }),
+    ScrollToModule.forRoot(),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatToolbarModule,
