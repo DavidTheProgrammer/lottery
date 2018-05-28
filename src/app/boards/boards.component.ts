@@ -1,5 +1,6 @@
 import { Component, OnChanges, Input } from '@angular/core';
 import { IBoardOptions } from '../board-options.interface';
+import { IBoardSelection } from './board-selection.interface';
 
 import * as rn from 'random-number';
 
@@ -49,6 +50,9 @@ export class BoardsComponent implements OnChanges {
         boardName: boardName,
         numbersToHighlight: numbersToHighlight
       });
+
+      // Exit
+      return;
     }
 
     if (uniqueNumbersOnly) {
@@ -123,9 +127,4 @@ export class BoardsComponent implements OnChanges {
 
     return array[index];
   }
-}
-
-interface IBoardSelection {
-  boardName: string | undefined;
-  numbersToHighlight: Array<number>;
 }
