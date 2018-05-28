@@ -1,22 +1,22 @@
 <header>
   <mat-toolbar color="primary">
-    <span>Lucky Number Generator</span>
+    <span>Lottery Ticket Generator</span>
   </mat-toolbar>
 </header>
 
 <main class="main">
 
   <div class="options">
-    <app-board-options (generateBoards)="onGenerateBoards($event)"></app-board-options>
+    <app-board-options (generateBoards)="onGenerateBoards($event)" #options></app-board-options>
   </div>
 
-  <div class="boards">
+  <div class="boards" #boards>
     <header class="boards__header">
       <h2 class="boards__heading">May the odds be in your favour 🤞</h2>
     </header>
 
     <div class="boards__wrapper">
-      <app-boards [boardOptions]="boardOptions"></app-boards>
+      <app-boards [boardOptions]="boardOptions" (animationDone)="options.enableGenerateButton()"></app-boards>
     </div>
   </div>
 
