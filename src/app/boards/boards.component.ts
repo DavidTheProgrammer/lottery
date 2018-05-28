@@ -1,4 +1,20 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import {
+  Component,
+  OnChanges,
+  EventEmitter,
+  Output,
+  Input
+} from '@angular/core';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  query,
+  stagger,
+  keyframes
+} from '@angular/animations';
+
 import { IBoardOptions } from '../board-options.interface';
 import { IBoardSelection } from './board-selection.interface';
 
@@ -7,10 +23,37 @@ import * as rn from 'random-number';
 @Component({
   selector: 'app-boards',
   templateUrl: './boards.component.html',
-  styleUrls: ['./boards.component.scss']
+  styleUrls: ['./boards.component.scss'],
+  animations: [
+    trigger('boardsAnimations', [
+      transition('* => *', [
+        query(':enter', style({ opacity: 0 }), { optional: true }),
+
+        query(
+          ':enter',
+          stagger('100ms', [
+            animate(
+              '500ms ease-in',
+              keyframes([
+                style({ opacity: 0, transform: 'translateY(-75%)', offset: 0 }),
+                style({
+                  opacity: 0.5,
+                  transform: 'translateY(35px)',
+                  offset: 0.3
+                }),
+                style({ opacity: 1, transform: 'translateY(0)', offset: 1.0 })
+              ])
+            )
+          ]),
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class BoardsComponent implements OnChanges {
   @Input() boardOptions: IBoardOptions;
+  @Output() animationDone = new EventEmitter();
 
   pool: Array<number>;
   selectionsPerBoard: Array<any>;
@@ -29,6 +72,10 @@ export class BoardsComponent implements OnChanges {
     this.pool = Array.from(poolArray, num => ++num);
 
     this._generateBoards();
+  }
+
+  enterAnimationDone(event: AnimationEvent): void {
+    this.animationDone.emit();
   }
 
   private _generateBoards(): void {

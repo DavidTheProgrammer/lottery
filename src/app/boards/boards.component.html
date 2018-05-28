@@ -1,7 +1,13 @@
 <div class="boards">
   <ng-container *ngIf="boardOptions; else noOptions">
-    <app-board class="board" *ngFor="let board of boardsToGenerate" [boardName]="board.boardName" [pool]="pool" [numbersToHighlight]="board.numbersToHighlight">
-    </app-board>
+    <div class="boards__wrapper" [@boardsAnimations]="boardsToGenerate" (@boardsAnimations.done)="enterAnimationDone($event)">
+      <app-board class="board"
+                 *ngFor="let board of boardsToGenerate"
+                 [boardName]="board.boardName"
+                 [pool]="pool"
+                 [numbersToHighlight]="board.numbersToHighlight">
+      </app-board>
+    </div>
   </ng-container>
 </div>
 
@@ -10,3 +16,4 @@
     <h3 class="no-options__text">Board(s) will show up here</h3>
   </div>
 </ng-template>
+

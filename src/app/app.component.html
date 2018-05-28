@@ -7,7 +7,7 @@
 <main class="main">
 
   <div class="options">
-    <app-board-options (generateBoards)="onGenerateBoards($event)"></app-board-options>
+    <app-board-options (generateBoards)="onGenerateBoards($event)" #options></app-board-options>
   </div>
 
   <div class="boards" #boards>
@@ -16,7 +16,7 @@
     </header>
 
     <div class="boards__wrapper">
-      <app-boards [boardOptions]="boardOptions"></app-boards>
+      <app-boards [boardOptions]="boardOptions" (animationDone)="options.enableGenerateButton()"></app-boards>
     </div>
   </div>
 

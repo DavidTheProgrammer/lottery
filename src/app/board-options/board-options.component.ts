@@ -42,10 +42,10 @@ export class BoardOptionsComponent implements OnInit {
     this.generateBoards.emit(boardOptions);
 
     this.generateButtonIsDisabled = true;
+  }
 
-    setTimeout(() => {
-      this.generateButtonIsDisabled = false;
-    }, 2000);
+  enableGenerateButton(): void {
+    this.generateButtonIsDisabled = false;
   }
 
   private _validateUniqueNumbersOptions(formValues: any): void {
