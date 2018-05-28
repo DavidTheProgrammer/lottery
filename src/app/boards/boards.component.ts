@@ -101,6 +101,11 @@ export class BoardsComponent implements OnChanges {
   ): Array<number> {
     const selectedNumbers = [];
 
+    // If the passed in array is equal in length to the number of selections return the array as the selection.
+    if (numbers.length === numberOfSelections) {
+      return numbers;
+    }
+
     for (let i = 0; i < numberOfSelections; i++) {
       const selectedNumber = this._selectRandomValue(numbers);
 
