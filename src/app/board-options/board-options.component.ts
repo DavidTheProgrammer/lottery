@@ -5,7 +5,7 @@ import { IBoardOptions } from '../board-options.interface';
 @Component({
   selector: 'app-board-options',
   templateUrl: './board-options.component.html',
-  styleUrls: ['./board-options.component.scss']
+  styleUrls: ['./board-options.component.scss'],
 })
 export class BoardOptionsComponent implements OnInit {
   @Output() generateBoards = new EventEmitter<IBoardOptions>();
@@ -13,18 +13,18 @@ export class BoardOptionsComponent implements OnInit {
   numberOfBoardsOption = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   generateButtonIsDisabled = false;
 
-  constructor(private _fb: FormBuilder) {}
-
-  ngOnInit() {
+  constructor(private _fb: FormBuilder) {
     this.optionsForm = this._fb.group({
       sizeOfPool: [32, Validators.required],
       selectionsPerBoard: [6, Validators.required],
       numberOfBoards: [5, Validators.required],
-      uniqueNumbersOnly: [false, Validators.required]
+      uniqueNumbersOnly: [false, Validators.required],
     });
+  }
 
+  ngOnInit() {
     // Subscribe to the form changes and validate the options
-    this.optionsForm.valueChanges.subscribe(formValues => {
+    this.optionsForm.valueChanges.subscribe((formValues) => {
       this._validateUniqueNumbersOptions(formValues);
     });
   }
@@ -36,7 +36,7 @@ export class BoardOptionsComponent implements OnInit {
       sizeOfPool: formValues.sizeOfPool,
       selectionsPerBoard: formValues.selectionsPerBoard,
       numberOfBoards: formValues.numberOfBoards,
-      uniqueNumbersOnly: formValues.uniqueNumbersOnly
+      uniqueNumbersOnly: formValues.uniqueNumbersOnly,
     };
 
     this.generateBoards.emit(boardOptions);

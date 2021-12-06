@@ -3,7 +3,7 @@ import {
   OnChanges,
   EventEmitter,
   Output,
-  Input
+  Input,
 } from '@angular/core';
 import {
   trigger,
@@ -12,7 +12,7 @@ import {
   animate,
   query,
   stagger,
-  keyframes
+  keyframes,
 } from '@angular/animations';
 
 import { IBoardOptions } from '../board-options.interface';
@@ -39,24 +39,24 @@ import * as rn from 'random-number';
                 style({
                   opacity: 0.5,
                   transform: 'translateY(35px)',
-                  offset: 0.3
+                  offset: 0.3,
                 }),
-                style({ opacity: 1, transform: 'translateY(0)', offset: 1.0 })
+                style({ opacity: 1, transform: 'translateY(0)', offset: 1.0 }),
               ])
-            )
+            ),
           ]),
           { optional: true }
-        )
-      ])
-    ])
-  ]
+        ),
+      ]),
+    ]),
+  ],
 })
 export class BoardsComponent implements OnChanges {
-  @Input() boardOptions: IBoardOptions;
+  @Input() boardOptions!: IBoardOptions;
   @Output() animationDone = new EventEmitter();
 
-  pool: Array<number>;
-  selectionsPerBoard: Array<any>;
+  pool!: Array<number>;
+  selectionsPerBoard!: Array<any>;
   boardsToGenerate: Array<IBoardSelection> = [];
 
   ngOnChanges() {
@@ -69,12 +69,12 @@ export class BoardsComponent implements OnChanges {
     // BUild an empty array of length sizeOfPool and obtain indexes
     const poolArray = new Array(this.boardOptions.sizeOfPool).keys();
     // Build array from above empty array
-    this.pool = Array.from(poolArray, num => ++num);
+    this.pool = Array.from(poolArray, (num) => ++num);
 
     this._generateBoards();
   }
 
-  enterAnimationDone(event: AnimationEvent): void {
+  enterAnimationDone(event: any): void {
     this.animationDone.emit();
   }
 
@@ -95,7 +95,7 @@ export class BoardsComponent implements OnChanges {
       // Push the just generated board to the top.
       this.boardsToGenerate.push({
         boardName: boardName,
-        numbersToHighlight: numbersToHighlight
+        numbersToHighlight: numbersToHighlight,
       });
 
       // Exit
@@ -116,11 +116,11 @@ export class BoardsComponent implements OnChanges {
 
         this.boardsToGenerate.push({
           boardName: boardName,
-          numbersToHighlight: numbersToHighlight
+          numbersToHighlight: numbersToHighlight,
         });
 
         selectedNumbers.push(...numbersToHighlight);
-        pool = pool.filter(x => !numbersToHighlight.includes(x));
+        pool = pool.filter((x) => !numbersToHighlight.includes(x));
       }
     } else {
       // Similar to single board but for board name
@@ -136,7 +136,7 @@ export class BoardsComponent implements OnChanges {
         // Push the just generated board to the top.
         this.boardsToGenerate.push({
           boardName: boardName,
-          numbersToHighlight: numbersToHighlight
+          numbersToHighlight: numbersToHighlight,
         });
       }
     }
@@ -146,7 +146,7 @@ export class BoardsComponent implements OnChanges {
     numbers: Array<number>,
     numberOfSelections: number
   ): Array<number> {
-    const selectedNumbers = [];
+    const selectedNumbers: number[] = [];
 
     // If the passed in array is equal in length to the number of selections return the array as the selection.
     if (numbers.length === numberOfSelections) {
@@ -157,7 +157,7 @@ export class BoardsComponent implements OnChanges {
       const selectedNumber = this._selectRandomValue(numbers);
 
       selectedNumbers.push(selectedNumber);
-      numbers = numbers.filter(x => !selectedNumbers.includes(x));
+      numbers = numbers.filter((x) => !selectedNumbers.includes(x));
     }
 
     return selectedNumbers;
@@ -172,7 +172,7 @@ export class BoardsComponent implements OnChanges {
     const options = {
       min: 0,
       max: array.length - 1,
-      integer: true
+      integer: true,
     };
 
     const index = rn(options);
